@@ -1,7 +1,7 @@
 resource "aws_iam_policy" "policy" {
   name        = "aws_secret_manager_for_ec2_for_roboshop_${var.ENV}"
   path        = "/"
-  description = "IAM Policy for Secret Manager to Get the secrets by EC2 Instance - DEV Env"
+  description = "IAM Policy for Secret Manager to Get the secrets by EC2 Instance - ${var.ENV} Env"
 
   policy = jsonencode({
     "Version" : "2012-10-17",
