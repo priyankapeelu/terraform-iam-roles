@@ -59,6 +59,11 @@ resource "aws_iam_role_policy_attachment" "test-attach" {
   policy_arn = aws_iam_policy.policy.arn
 }
 
+resource "aws_iam_role_policy_attachment" "documentdb-attach" {
+  role       = aws_iam_role.ec2_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonDocDBReadOnlyAccess"
+}
+
 resource "aws_iam_instance_profile" "instance_profile" {
   name = "${var.ENV}_instance_profile"
   role = aws_iam_role.ec2_role.name
