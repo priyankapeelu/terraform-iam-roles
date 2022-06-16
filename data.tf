@@ -1,5 +1,5 @@
 data "aws_secretsmanager_secret" "secrets" {
-  name = "${var.ENV}/roboshop/secrets"
+  name = "${var.ENV}/roboshop/secret"
 }
 
 data "aws_secretsmanager_secret_version" "secrets" {
